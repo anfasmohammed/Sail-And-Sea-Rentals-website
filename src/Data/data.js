@@ -7,7 +7,7 @@ export const data =[
         
     },
     {id:2,
-        title:"Small fishing boat",
+        title:"Fishing boat",
         price:"1000 per day",
         discription:"max-2person,10kmph",
         image:"https://images.pexels.com/photos/27847451/pexels-photo-27847451/free-photo-of-a-small-boat-is-floating-in-the-water-near-a-small-island.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
