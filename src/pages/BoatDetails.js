@@ -23,7 +23,7 @@ const BoatDetails = () => {
 			</div>
 		</div>
     <div className='flex justify-between'><button className='rounded-xl bg-red-200 hover:bg-red-400 text-slate-600 px-5 lg:px-7 py-2 text-2xl'>Rent now </button>
-	<button className='rounded-xl bg-red-200 hover:bg-red-400 text-slate-600 px-5 lg:px-7 py-2 text-2xl'><Link to=".." relative="path">Back to all</Link> </button>
+	<button className='rounded-xl bg-red-200 hover:bg-red-400 text-slate-600 px-5 lg:px-7 py-2 text-2xl'><Link to=".." relative="path">Back to all~</Link> </button>
 	</div>
 	</div>
 </div>
