@@ -1,6 +1,5 @@
 import React from 'react'
-import Layout from '../components/Layout'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { data } from '../Data/data'
 
 const BoatDetails = () => {
@@ -8,7 +7,7 @@ const BoatDetails = () => {
   const boat=data.find((item)=>Number(item.id)===Number(id))
   
   return (
-    <Layout>
+    <div>
       <div className="p-5 mx-auto sm:p-10 md:p-16 dark:bg-gray-100 dark:text-gray-800">
 	<div className="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">
 		<img src={boat.image} alt="" className="w-full h-60 sm:h-96 dark:bg-gray-500" />
@@ -23,10 +22,12 @@ const BoatDetails = () => {
 				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam nulla necessitatibus temporibus cumque consequatur vel suscipit officia, qui molestiae ut eius perferendis ex optio aperiam atque non inventore! Architecto, excepturi.</p>
 			</div>
 		</div>
-    <div><button className='rounded-xl bg-red-200 hover:bg-red-400 text-slate-600 px-5 lg:px-7 py-2 text-2xl'>Rent now</button></div>
+    <div className='flex justify-between'><button className='rounded-xl bg-red-200 hover:bg-red-400 text-slate-600 px-5 lg:px-7 py-2 text-2xl'>Rent now </button>
+	<button className='rounded-xl bg-red-200 hover:bg-red-400 text-slate-600 px-5 lg:px-7 py-2 text-2xl'><Link to=".." relative="path">Back to all</Link> </button>
+	</div>
 	</div>
 </div>
-    </Layout>
+    </div>
   )
 }
 

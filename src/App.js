@@ -21,19 +21,19 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout/>}>
       <Route index element={<Home/>}/> 
-      <Route path="/about" element={<About/>}/>
-      <Route path="/Explore" element={<Explore/>}/>
+      <Route path="about" element={<About/>}/>
+      <Route path="Explore" element={<Explore/>}/>
       <Route path="*" element={<PageNotFount/>}/>
-      <Route path="/Plans" element={<Plans/>}/>
-      <Route path="/boats" element={<Boats/>}/>
-      <Route path="/boats/:id" element={<BoatDetails/>}/>
+      <Route path="Plans" element={<Plans/>}/>
+      <Route path="boats" element={<Boats/>}/>
+      <Route path="boats/:id" element={<BoatDetails/>}/>
 
-      <Route path="/admin" element={<AdminLayout/>}>
+      <Route path="admin" element={<AdminLayout/>}>
       <Route index element={<Dashboard/>}/>
-      <Route path="/admin/income" element={<Income/>}/>
-      <Route path="/admin/reviews" element={<Reviews/>}/>
-      <Route path="/admin/boat" element={<Boat/>}/>
-      <Route path="/admin/boat/:id" element={<AdminBoatDetails/>}/>
+      <Route path="income" element={<Income/>}/>
+      <Route path="reviews" element={<Reviews/>}/>
+      <Route path="boat" element={<Boat/>}/>
+      <Route path="boat/:id" element={<AdminBoatDetails/>}/>
     </Route>
 
       </Route>

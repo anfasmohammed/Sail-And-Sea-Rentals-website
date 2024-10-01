@@ -20,7 +20,7 @@ const AdminBoatDetails = () => {
                   <h1 className='mt-1'>{boat.price}</h1>
                   <h1>{boat.discription}</h1>
                   <h1 className='w-[600px] py-1'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente corporis modi id totam nesciunt? Obcaecati quibusdam iusto voluptates? Perferendis possimus iste obcaecati, sapiente libero quo ratione rem molestiae dolorum fugit?</h1>
-                  <button className=' mt-3 rounded-xl bg-red-200 hover:bg-red-400 text-slate-600 px-5 lg:px-5 py-2 text-2xl'><Link to="/admin/boat">Back to all Boats</Link></button>
+                  <button className=' mt-3 rounded-xl bg-red-200 hover:bg-red-400 text-slate-600 px-5 lg:px-5 py-2 text-2xl'><Link to=".." relative='path'>Back to all Boats</Link></button>
                 </div>
     </div>
   )

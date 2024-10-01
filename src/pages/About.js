@@ -6,7 +6,7 @@ const About = () => {
     <div>
       <div className='flex flex-col items-center h-[70vh] bg-red-50'>
         <div>
-        <img className='w-fix' src="https://images.pexels.com/photos/13856740/pexels-photo-13856740.jpeg" alt="" srcset="" />
+        <img className='w-fix h-[70vh]' src="https://images.pexels.com/photos/13856740/pexels-photo-13856740.jpeg" alt="" srcset="" />
         </div>
         <div className='flex flex-col items-center'>
           <h1>RENT YOUR DREAM BOAT</h1>
