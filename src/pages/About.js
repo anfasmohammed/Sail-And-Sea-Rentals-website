@@ -1,12 +1,12 @@
 import React from 'react'
-import Layout from '../components/Layout'
+
 
 const About = () => {
   return (
-    <Layout>
+    <div>
       <div className='flex flex-col items-center h-[70vh] bg-red-50'>
         <div>
-        <img className='w-fix' src="https://images.pexels.com/photos/27864458/pexels-photo-27864458/free-photo-of-a-group-of-boats-are-docked-in-a-harbor.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="" srcset="" />
+        <img className='w-fix' src="https://images.pexels.com/photos/13856740/pexels-photo-13856740.jpeg" alt="" srcset="" />
         </div>
         <div className='flex flex-col items-center'>
           <h1>RENT YOUR DREAM BOAT</h1>
@@ -18,7 +18,7 @@ const About = () => {
         </div>
       </div>
       
-      </Layout>
+      </div>
   )
 }
 
