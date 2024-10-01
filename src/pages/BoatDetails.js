@@ -13,9 +13,9 @@ const BoatDetails = () => {
 		<img src={boat.image} alt="" className="w-full h-60 sm:h-96 dark:bg-gray-500" />
 		<div className="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 lg:max-w-2xl sm:px-10 sm:mx-12 lg:rounded-md dark:bg-gray-50">
 			<div className="space-y-2">
-				<a rel="noopener noreferrer" href="#" className="inline-block text-2xl font-semibold sm:text-3xl text-red-200">{boat.title}</a>
+				<a rel="noopener noreferrer"  className="inline-block text-2xl font-semibold sm:text-3xl text-red-200">{boat.title}</a>
 				<p className="text-xs dark:text-gray-600">Rent:
-					<a rel="noopener noreferrer" href="#" className="text-xs hover:underline">{boat.price}</a>
+					<a rel="noopener noreferrer"  className="text-xs hover:underline">{boat.price}</a>
 				</p>
 			</div>
 			<div className="dark:text-gray-800">
