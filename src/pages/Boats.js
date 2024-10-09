@@ -1,17 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { data } from '../Data/data'
 import { Link } from 'react-router-dom'
+import SearchBar from '../components/SearchBar'
 
 const Boats = () => {
+    const [searchTerm,setSearchTerm]=useState("")
   return (
     <div >
+        
         <div className='flex flex-col items-center bg-red-50 gap-3'>
+       <div className='mt-2'> <SearchBar 
+        setSearchTerm={setSearchTerm} 
+        /></div>
             <div>
             <h1 className='text-slate-600 text-5xl font-bold py-10'>EXPLORE OUR BOATS</h1>
             </div>
             <div className='flex gap-10 pb-12'>
                 {
-                    data.map((item)=>{
+                    data && data.filter((item)=>{
+                        return searchTerm.toLowerCase()===""?item:item.title.toLowerCase().includes(searchTerm)
+                    })
+                    .map((item)=>{
                         return(
                             <div className="max-w-xs rounded-md  shadow-md dark:bg-gray-50 dark:text-gray-800">
                                 <Link to={`/boats/${item.id}`}>
