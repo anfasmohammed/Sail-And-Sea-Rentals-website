@@ -1,31 +1,83 @@
-import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import SailingIcon from '@mui/icons-material/Sailing';
+import { useState } from "react"
+import { Close, Label, Menu, Sailing } from "@mui/icons-material"
+import { NavLink } from "react-router-dom"
+
+
 
 const Navbar = () => {
   const[extendNavbar,setExtentNavbar]=useState(false)
+
+  const handleToggle =()=>setExtentNavbar(prev => !prev);
+  const handleClose =()=>setExtentNavbar(false)
+
   return (
-    <div>
-        <nav className='flex justify-between items-center h-20 bg-gradient-to-r from-gray-700 to-lime-800 px-6 '>
-            <div className='flex gap-1 items-center text-3xl ml-3 font-bold text-white hover:text-green-300'>
-              <SailingIcon />
-            <NavLink to={"/"}>Voyage Vessels</NavLink>
-            </div>
-            <ul onClick={()=>{setExtentNavbar(false)}} className={`lg:static flex flex-col lg:flex-row lg:justify-between text-2xl md:gap-7 font-semibold text-white ${extendNavbar?"left-0 top-20 bg bg-gradient-to-r from-gray-700 to-lime-800 w-[100%] py-3 border-t-2":"left-[-100%]"} absolute `}>
-            <li className={`hover:text-green-300 ${extendNavbar?"p-1 border-b border-green-900 px-10 ":""}`}><NavLink to={"admin"} className={({isActive})=>isActive?"text-blue-600 ":""}>Admin</NavLink></li>
-            <li className={`hover:text-green-300 ${extendNavbar?"p-1 border-b px-10 border-green-900 ":""}`}><NavLink to={"plans"} className={({isActive})=>isActive?"text-blue-600":""}>Plans</NavLink></li>
-            <li className={`hover:text-green-300 ${extendNavbar?"p-1 border-b px-10 border-green-900 ":""}`}><NavLink to={"about"} className={({isActive})=>isActive?"text-blue-600":""}>About</NavLink></li>
-            <li className={`hover:text-green-300 ${extendNavbar?"p-1 border-b px-10 border-green-900 ":""}`}><NavLink to={"boats"} className={({isActive})=>isActive?"text-blue-600":""}>Boats</NavLink></li>
-            <li className={`hover:text-green-300 ${extendNavbar?'pt-1 px-10 ':""}`}><NavLink to={"explore"} className={({isActive})=>isActive?"text-blue-600 ":""}>Explore</NavLink></li>
+       <>
+       {/* Desktop Navbar */}
+       <nav className="hidden md:flex">
+                <div className=" flex w-full  justify-between items-center mx-auto z-50 py-3 bg-secondary px-2">
+               <div className='flex text-xl gap-1 items-center md:text-2xl font-mono ml-3 font-bold text-white '>
+                  <Sailing />
+                <NavLink className={"hover:scale-110 translate-x-1 transform transition duration-300"} to={"/"}>Voyage Vessels</NavLink>
+                </div>
+                <ul className='hidden md:flex font-semibold text-white  text-'>
+                  <li className='px-2'>Plans</li>
+                  <li className='px-2'>About</li>
+                  <li className='px-2'>Admin</li>
+                  <li className='px-2'><NavLink to={"/Boats"}>Boats</NavLink></li>
+                  <li className='px-2'>Explore</li>
                 </ul>
-                
-                <div className='lg:hidden text-white' onClick={()=>{setExtentNavbar (open=>!open)}}>{extendNavbar?<CloseIcon/>:<MenuIcon/>} </div>
-            
-        </nav>
-    </div>
+               </div>    
+              
+       </nav>
+
+       {/* Mobile Navbar */}
+       <div className="md:hidden bg-secondary">
+        <button onClick={handleToggle}>
+          {extendNavbar?<Close/>:<Menu/>}
+        </button>
+        {extendNavbar && (
+          <div className="mobile-menu bg-secondary px-3 py-5">
+            <div className="flex justify-between">
+              <Sailing/>
+              <Close onClick={handleClose}/>
+            </div>
+            <ul className="flex flex-col gap-2 mt-2">
+              {['About','Plans','Admin','Boats','Explore'].map(label=>(
+                <li kay={label}
+                    className="btn btn-circle btn-outline"
+                    onClick={handleClose}>
+                      <NavLink to={`/${label.toLowerCase()}`}>{label}</NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+       </div>
+      </>
   )
 }
 
 export default Navbar
+
+
+ 
+              {/* <div className=' block md:hidden h-full px-3 py-5 w-full bg-secondary duration-300'>
+                  <div className='flex text-white justify-between items-center px-5 pb-2 mx-auto border-b-2'>
+                    < Sailing/>
+                    <Close className='font-bold hover:scale-125 duration-100 ' onClick={()=>{setExtentNavbar(false)}}/>
+                  </div>
+                  <div >
+                  <ul className='flex flex-col gap-2 mt-2  '>
+                    <li className='btn btn-circle btn-outline px-5 bg-secondary border-none w-full text-2xl font-bold text-base-100 justify-start'>About</li>
+                    <li className='btn btn-circle btn-outline px-5 bg-secondary border-none w-full text-2xl font-bold text-base-100 justify-start'>plans</li>
+                    <li className='btn btn-circle btn-outline px-5 bg-secondary border-none w-full text-2xl font-bold text-base-100 justify-start'>Admin</li>
+                    <li className='btn btn-circle btn-outline px-5 bg-secondary border-none w-full text-2xl font-bold text-base-100 justify-start'>Boats</li>
+                    <li className='btn btn-circle btn-outline px-5 bg-secondary border-none w-full text-2xl font-bold text-base-100 justify-start'>Explore</li>
+                  </ul>
+                  </div>
+                  </div> */}
+                  
+                  
+                
+              
+              

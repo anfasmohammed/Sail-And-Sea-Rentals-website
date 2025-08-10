@@ -45,3 +45,22 @@ as well as the boat link in the admin navbar
 
 
 -  Building out the admin boat list and details pages
+
+
+
+
+
+
+
+
+
+
+
+
+<ul onClick={()=>{setExtentNavbar(false)}} className={`lg:static flex flex-col lg:flex-row lg:justify-between text-2xl md:gap-7 font-semibold text-white ${extendNavbar?"left-0 top-16 z-50 w-[100%] border-t-2":"left-[-100%]"} absolute `}>
+            <li className={`hover:text-green-300 ${extendNavbar?"p-1 border-b border-green-900 px-10 ":""}`}><NavLink to={"admin"} className={({isActive})=>isActive?"text-emerald-400":""}>Admin</NavLink></li>
+            <li className={`hover:text-green-300 ${extendNavbar?"p-1 border-b px-10 border-green-900 ":""}`}><NavLink to={"plans"} className={({isActive})=>isActive?"text-emerald-400":""}>Plans</NavLink></li>
+            <li className={`hover:text-green-300 ${extendNavbar?"p-1 border-b px-10 border-green-900 ":""}`}><NavLink to={"about"} className={({isActive})=>isActive?"text-emerald-400":""}>About</NavLink></li>
+            <li className={`hover:text-green-300 ${extendNavbar?"p-1 border-b px-10 border-green-900 ":""}`}><NavLink to={"boats"} className={({isActive})=>isActive?"text-emerald-400":""}>Boats</NavLink></li>
+            <li className={`hover:text-green-300 ${extendNavbar?'pt-1 px-10 ':""}`}><NavLink to={"explore"} className={({isActive})=>isActive?"text-emerald-400 ":""}>Explore</NavLink></li>
+                </ul>
